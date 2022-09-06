@@ -1,4 +1,4 @@
-package pl.pranagal.bartosz.lcmsapp;
+package pl.pranagal.bartosz.lcmsapp.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -40,9 +40,11 @@ public class WebSecurityConfig {
         httpSecurity.authorizeRequests()
                 .antMatchers("/test1")
                 .authenticated()
-                .and()
-                .formLogin()
-                .permitAll();
+                .anyRequest().permitAll();
+     //           .and()
+          //      .permitAll();
+        httpSecurity.csrf().disable();
+        httpSecurity.headers().frameOptions().disable();
 
         return httpSecurity.build();
     }
