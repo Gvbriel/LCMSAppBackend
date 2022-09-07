@@ -34,7 +34,7 @@ public class UserService implements UserDetailsService  {
         user.setMail(userRequest.getMail());
         user.setName(userRequest.getName());
         user.setSurname(userRequest.getSurname());
-        //user.setAuthorityEntityList(Arrays.asList(authorityRepository.findByAuthorityName("ROLE_USER").orElseThrow(()-> new RuntimeException())));
+        user.setAuthorityEntityList(Arrays.asList(authorityRepository.findByAuthorityName("ROLE_USER").orElseThrow(()-> new RuntimeException())));
 
         return userRepository.save(user);
     }

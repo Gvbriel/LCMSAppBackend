@@ -21,8 +21,8 @@ public class UserEntity implements Idenficiable {
     private String surname;
 
 
-//    @ManyToMany(cascade = CascadeType.REMOVE)
-//    private List<AuthorityEntity> authorityEntityList;
+    @ManyToMany(cascade = CascadeType.MERGE)
+    private List<AuthorityEntity> authorityEntityList;
 
 
 }
